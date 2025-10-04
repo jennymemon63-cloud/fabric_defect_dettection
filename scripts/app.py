@@ -1,24 +1,11 @@
+import os
+
+# Force OpenCV to use headless mode
+os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+
+import cv2
 import streamlit as st
 
-st.write("🚀 App starting...")
-
-try:
-    import cv2
-    st.success(f"✅ OpenCV version: {cv2.__version__}")
-except Exception as e:
-    st.error(f"❌ OpenCV failed: {e}")
-
-try:
-    import torch
-    st.success(f"✅ Torch version: {torch.__version__}")
-except Exception as e:
-    st.error(f"❌ Torch failed: {e}")
-
-try:
-    from ultralytics import YOLO
-    st.success("✅ Ultralytics YOLO imported successfully")
-except Exception as e:
-    st.error(f"❌ YOLO import failed: {e}")
 
 
 from PIL import Image
@@ -71,6 +58,7 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
 
 
 
