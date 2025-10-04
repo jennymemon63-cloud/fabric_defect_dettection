@@ -1,15 +1,25 @@
 import streamlit as st
 
+st.write("🚀 App starting...")
+
 try:
     import cv2
-    st.write("✅ OpenCV imported:", cv2.__version__)
+    st.success(f"✅ OpenCV version: {cv2.__version__}")
 except Exception as e:
-    st.error(f"❌ OpenCV import failed: {e}")
+    st.error(f"❌ OpenCV failed: {e}")
 
-import os
-os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+try:
+    import torch
+    st.success(f"✅ Torch version: {torch.__version__}")
+except Exception as e:
+    st.error(f"❌ Torch failed: {e}")
 
-from ultralytics import YOLO
+try:
+    from ultralytics import YOLO
+    st.success("✅ Ultralytics YOLO imported successfully")
+except Exception as e:
+    st.error(f"❌ YOLO import failed: {e}")
+
 
 from PIL import Image
 import streamlit as st
@@ -61,6 +71,7 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
 
 
 
