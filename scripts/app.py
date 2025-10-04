@@ -1,7 +1,10 @@
-import cv2
 import streamlit as st
 
-st.write("✅ OpenCV version:", cv2.__version__)
+try:
+    import cv2
+    st.write("✅ OpenCV imported successfully, version:", cv2.__version__)
+except Exception as e:
+    st.error(f"❌ OpenCV import failed: {e}")
 
 from PIL import Image
 import streamlit as st
@@ -53,4 +56,5 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
 
