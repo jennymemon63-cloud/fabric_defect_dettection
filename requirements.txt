@@ -1,14 +1,18 @@
 streamlit
 
-# Force headless OpenCV first
+# Force only headless OpenCV
 opencv-python-headless==4.8.1.78
 
-# Specific versions for compatibility
+# Block GUI OpenCV completely
+opencv-python==0.0.0
+opencv-contrib-python==0.0.0
+
+# Specific versions
 ultralytics==8.0.196
 numpy==1.26.4
 pillow
 
-# Torch CPU versions (don’t use +cpu in version, let pip resolve from index-url)
+# Torch CPU
 torch==2.2.0
 torchvision==0.17.0
 
