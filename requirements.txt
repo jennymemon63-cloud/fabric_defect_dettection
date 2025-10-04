@@ -1,8 +1,14 @@
-opencv-python-headless==4.8.1.78
 streamlit
+# Force headless OpenCV first
+opencv-python-headless==4.8.1.78
+# Block GUI version
+opencv-python==0.0.0
+
+# Specific versions for compatibility
 ultralytics==8.0.196
 numpy==1.26.4
 pillow
 torch==2.2.0+cpu
 torchvision==0.17.0+cpu
+
 --extra-index-url https://download.pytorch.org/whl/cpu
