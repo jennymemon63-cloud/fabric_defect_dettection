@@ -2,9 +2,14 @@ import streamlit as st
 
 try:
     import cv2
-    st.write("✅ OpenCV imported successfully, version:", cv2.__version__)
+    st.write("✅ OpenCV imported:", cv2.__version__)
 except Exception as e:
     st.error(f"❌ OpenCV import failed: {e}")
+
+import os
+os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+
+from ultralytics import YOLO
 
 from PIL import Image
 import streamlit as st
@@ -56,5 +61,6 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
 
 
