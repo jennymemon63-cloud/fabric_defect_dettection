@@ -1,5 +1,8 @@
-import os
-os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+import cv2
+import streamlit as st
+
+st.write("✅ OpenCV version:", cv2.__version__)
+
 from PIL import Image
 import streamlit as st
 from ultralytics import YOLO
@@ -50,3 +53,4 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
