@@ -1,3 +1,4 @@
+# Streamlit web app
 streamlit
 
 # Force only headless OpenCV (no GUI, no libGL dependency)
@@ -9,6 +10,6 @@ numpy==1.26.4
 pillow
 
 # Torch CPU versions
-torch==2.2.0
-torchvision==0.17.0
+torch==2.2.0+cpu
+torchvision==0.17.0+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
