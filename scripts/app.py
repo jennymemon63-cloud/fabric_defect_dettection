@@ -1,7 +1,16 @@
 import os
+os.environ["MPLCONFIGDIR"] = "/tmp"
+os.environ["OPENCV_OPENGL"] = "false"
+os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+os.environ["OPENCV_VIDEOIO_PRIORITY_DSHOW"] = "0"
+os.environ["OPENCV_VIDEOIO_PRIORITY_GSTREAMER"] = "0"
+
+
+
+#import os
 
 # Force OpenCV to use headless mode
-os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+#os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
 
 import cv2
 import streamlit as st
@@ -58,6 +67,7 @@ def inference_images(uploaded_file, model):
 if __name__=='__main__':
 
     main()
+
 
 
 
