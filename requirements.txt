@@ -1,15 +1,9 @@
-# Streamlit web app
 streamlit
-
-# Force only headless OpenCV (no GUI, no libGL dependency)
-opencv-python-headless==4.8.1.78
-
-# ML + utils
 ultralytics==8.0.196
+opencv-python-headless==4.8.1.78
 numpy==1.26.4
 pillow
-
-# Torch CPU versions
-torch==2.2.0+cpu
-torchvision==0.17.0+cpu
+torch==2.2.0
+torchvision==0.17.0
+requests
 --extra-index-url https://download.pytorch.org/whl/cpu
